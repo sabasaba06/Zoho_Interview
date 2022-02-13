@@ -1,0 +1,87 @@
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="container"  >
+    <div id="tabs">
+        <p id="lt" class="tabs" onclick="loginTabFun()">Log in</p>
+        <p id="rt" class="tabs" onclick="regTabFun()">Register</p>
+
+        <div id="clear"></div>
+    </div>
+
+    <div id="cont">
+        <div id="login" class="comm">
+            <h3>Sign in</h3>
+
+            <input id="se" type="email" placeholder="Email" required/>
+            <input id="sp" type="password" placeholder="Password" required/>
+            <input type="submit" onclick="login()" value="Submit"/>
+
+            <p onclick="forTabFun()">Forget Password?</p>
+        </div>
+        <div id="register" class="comm">
+            <h3>Register</h3>
+
+            <input id="re" type="email" placeholder="Email" required/>
+            <input id="rp" type="password" placeholder="Password" required/>
+            <input id="rrp" type="code" placeholder="Secret Code" required/>
+            <input type="submit" onclick="register()" value="Submit"/>
+
+        </div >
+        <div id="forgot" class="comm">
+        <h3>Forgot Password</h3>
+        <div>
+            <input id="fe" type="email" placeholder="Email" required/>
+            <input id="fc" type="code" placeholder="Secret code" required/>
+            <input type="submit" onclick="forgot()" value="Submit"/>
+        </div>
+        </div>
+    </div>
+    
+</div>
+<div id="commentsDiv" style="display:none">
+  <div id ="addComments">
+    <input id ="commentText" type="text" placeholder="Enter your comments here" required/>
+    <input id="submitComment" type="submit" onclick="addCommentstoDB()" value="Submit"/>
+
+  </div>
+  <div id="loadComments">
+  <div id="commentsHeader">
+    <h1>Comments</h1>
+    <button class="filter-comment" onclick="filterComments()">Filter</button>
+  </div>
+    <div id="displayComments">
+      
+    </div>
+  </div>
+</div>
+<!--<div id="footer">
+    <h2>By. Mansoor Amin </br> Roll No. 1941</h2>
+
+</div>-->
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+  <script style = "display: none;">
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyD6yreeRQJkhUKM6y3KxVptHG9gQJvqIqo",
+      authDomain: "signup-signin-authentica-496bb.firebaseapp.com",
+      projectId: "signup-signin-authentica-496bb",
+      storageBucket: "signup-signin-authentica-496bb.appspot.com",
+      databaseURL: "https://signup-signin-authentica-496bb-default-rtdb.firebaseio.com/",
+      messagingSenderId: "983980698411",
+      appId: "1:983980698411:web:0010618eee25309e24336e"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+
+  
+</body>
+</html>
